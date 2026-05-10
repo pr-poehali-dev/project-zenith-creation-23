@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { PawPrint, Trees, Satellite, Menu, X, Youtube, Instagram, ChevronDown } from "lucide-react"
+import { Menu, X, Youtube, Instagram, ChevronDown } from "lucide-react"
 import { AnimatedText } from "@/components/animated-text"
-import { CustomDroneIcon } from "@/components/drone-icon"
 import { WorldMap } from "@/components/world-map"
 import { experiences } from "@/lib/experience-data"
 import type { Experience } from "@/lib/experience-data"
+import Icon from "@/components/ui/icon"
 
 function AnimatedCounter({ value, suffix = "" }: { value: string; suffix?: string }) {
   const [displayValue, setDisplayValue] = useState("0")
@@ -64,7 +64,7 @@ export default function VerdantPage() {
   const heroRef = useRef<HTMLDivElement>(null)
   const observerRef = useRef<IntersectionObserver | null>(null)
 
-  const dynamicWords = ["леса", "природу", "животных", "экосистемы", "биоразнообразие", "дикую жизнь", "среду обитания"]
+  const dynamicWords = ["зедов", "орды", "мутантов", "заражённых", "выживших", "врагов", "хаос"]
 
   useEffect(() => {
     const wordInterval = setInterval(() => {
@@ -159,7 +159,7 @@ export default function VerdantPage() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-lg md:text-xl font-semibold font-mono hover:text-pink-400 transition-colors duration-300"
             >
-              VERDANT
+              KILLING FLOOR 3
             </button>
 
             <nav className="hidden md:flex items-center gap-8">
@@ -167,31 +167,31 @@ export default function VerdantPage() {
                 onClick={() => scrollToSection("metrics")}
                 className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors duration-300"
               >
-                Результаты
+                Статистика
               </button>
               <button
                 onClick={() => scrollToSection("map")}
                 className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors duration-300"
               >
-                Проекты
+                Карта зон
               </button>
               <button
                 onClick={() => scrollToSection("narrative")}
                 className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors duration-300"
               >
-                Технологии
+                Механики
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
                 className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors duration-300"
               >
-                Вопросы
+                FAQ
               </button>
               <button
                 onClick={() => scrollToSection("cta")}
                 className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors duration-300"
               >
-                Участвовать
+                Играть
               </button>
             </nav>
 
@@ -213,31 +213,31 @@ export default function VerdantPage() {
               onClick={() => scrollToSection("metrics")}
               className="font-serif text-5xl md:text-7xl font-light text-[#F2F3F5] hover:text-pink-400 transition-colors duration-300"
             >
-              Результаты
+              Статистика
             </button>
             <button
               onClick={() => scrollToSection("map")}
               className="font-serif text-5xl md:text-7xl font-light text-[#F2F3F5] hover:text-pink-400 transition-colors duration-300"
             >
-              Проекты
+              Карта зон
             </button>
             <button
               onClick={() => scrollToSection("narrative")}
               className="font-serif text-5xl md:text-7xl font-light text-[#F2F3F5] hover:text-pink-400 transition-colors duration-300"
             >
-              Технологии
+              Механики
             </button>
             <button
               onClick={() => scrollToSection("faq")}
               className="font-serif text-5xl md:text-7xl font-light text-[#F2F3F5] hover:text-pink-400 transition-colors duration-300"
             >
-              Вопросы
+              FAQ
             </button>
             <button
               onClick={() => scrollToSection("cta")}
               className="font-serif text-5xl md:text-7xl font-light text-[#F2F3F5] hover:text-pink-400 transition-colors duration-300"
             >
-              Участвовать
+              Играть
             </button>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function VerdantPage() {
         ref={heroRef}
         className={`relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 pb-16 md:pt-32 md:pb-24 transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${isLoaded ? "scale-100 opacity-100" : "scale-[1.03] opacity-0"}`}
         style={{
-          backgroundImage: `url('/hero-landscape.png')`,
+          backgroundImage: `url('https://cdn.poehali.dev/projects/886e95cb-d62d-423e-938d-fde33fec4e33/files/c0832032-1151-4f19-8cf2-38c4e3e5c625.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -257,7 +257,7 @@ export default function VerdantPage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             transform: `translateY(${scrollY * 0.5}px)`,
-            backgroundImage: `url('/hero-landscape.png')`,
+            backgroundImage: `url('https://cdn.poehali.dev/projects/886e95cb-d62d-423e-938d-fde33fec4e33/files/c0832032-1151-4f19-8cf2-38c4e3e5c625.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -278,21 +278,21 @@ export default function VerdantPage() {
                   wordFade ? "opacity-100 blur-0" : "opacity-0 blur-lg"
                 }`}
               >
-                Защитим <AnimatedText key={dynamicWordIndex} text={dynamicWords[dynamicWordIndex]} delay={0} />
+                Уничтожь <AnimatedText key={dynamicWordIndex} text={dynamicWords[dynamicWordIndex]} delay={0} />
               </span>
               <span className="block stagger-reveal text-7xl font-light md:text-8xl" style={{ animationDelay: "90ms" }}>
-                в масштабе
+                любой ценой
               </span>
             </h1>
             <p
               className="text-[#A7ABB3] text-base md:text-lg max-w-[520px] mx-auto mb-8 leading-relaxed stagger-reveal text-white"
               style={{ animationDelay: "180ms" }}
             >
-              Мониторинг лесов в реальном времени с помощью ИИ. Обнаружение угроз, отслеживание биоразнообразия, сохранение природы для будущих поколений.
+              Кооперативный шутер на выживание нового поколения. Сражайся с ордами мутантов, прокачивай перки и держись до последнего вместе с командой.
             </p>
             <div className="stagger-reveal" style={{ animationDelay: "270ms" }}>
               <Button className="glass-button px-8 py-6 text-base rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-white">
-                Начать защиту
+                Играть сейчас
               </Button>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function VerdantPage() {
       <section className="relative py-12 border-y border-white/5 bg-[#0B0C0F] overflow-hidden md:py-8 md:pt-8 md:pb-4">
         <div className="w-full">
           <p className="text-center text-xs md:text-sm uppercase tracking-[0.2em] text-[#A7ABB3] mb-8">
-            Нам доверяют ведущие природоохранные организации
+            Доступно на платформах
           </p>
           <div className="logo-marquee">
             <div className="logo-marquee-content">
@@ -359,7 +359,7 @@ export default function VerdantPage() {
       <section id="metrics" className="relative py-20 md:py-32 px-4 animate-on-scroll md:pt-24 md:pb-20">
         <div className="max-w-[1120px] w-full mx-auto">
           <h2 className="font-serif text-[32px] leading-[1.15] md:text-[48px] md:leading-[1.1] font-medium mb-6 md:mb-8 text-center text-balance">
-            Природоохранный{" "}
+            Боевая{" "}
             <span
               className="inline-block"
               style={{
@@ -369,21 +369,21 @@ export default function VerdantPage() {
                 backgroundClip: "text",
               }}
             >
-              результат
+              статистика
             </span>{" "}
-            в масштабе
+            в цифрах
           </h2>
 
           <p className="text-[#A7ABB3] text-sm md:text-base mb-12 md:mb-16 text-center max-w-[600px] mx-auto leading-relaxed">
-            Нам доверяют природоохранные организации по всему миру. Работаем на технологиях, созданных для природы.
+            Миллионы игроков по всему миру уже сражаются с ордами зедов. Твой отряд ждёт.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-[800px] mx-auto">
             {[
-              { label: "ЗАЩИЩЕНО ЛЕСОВ", value: "2.4M", desc: "гектаров по всему миру", color: "pink" },
-              { label: "ВИДОВ НА МОНИТОРИНГЕ", value: "12K+", desc: "диких животных", color: "purple" },
-              { label: "ПОГЛОЩЕНО УГЛЕРОДА", value: "18M", desc: "тонн CO2", color: "pink" },
-              { label: "ТОЧНОСТЬ ДЕТЕКЦИИ", value: "99.4%", desc: "обнаружения угроз", color: "purple" },
+              { label: "ИГРОКОВ В СЕТИ", value: "4.2M", desc: "активных бойцов", color: "pink" },
+              { label: "ЗЕДОВ УНИЧТОЖЕНО", value: "18B+", desc: "мутантов за всё время", color: "purple" },
+              { label: "КАРТ В ИГРЕ", value: "24+", desc: "уникальных локаций", color: "pink" },
+              { label: "РЕЙТИНГ ИГРОКОВ", value: "96%", desc: "положительных отзывов", color: "purple" },
             ].map((metric, i) => (
               <div
                 key={i}
@@ -411,13 +411,13 @@ export default function VerdantPage() {
         <div className="text-center mb-12 md:mb-16 px-4">
           <div className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-[#A7ABB3] mb-6 flex items-center justify-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-            ГЛОБАЛЬНЫЙ ОХВАТ
+            АКТИВНЫЕ ЗОНЫ ЗАРАЖЕНИЯ
           </div>
           <h2 className="font-serif text-[32px] leading-[1.15] md:text-[48px] md:leading-[1.1] font-medium mb-6 text-balance">
-            Проекты по всему миру
+            Карта активных зон
           </h2>
           <p className="text-[#A7ABB3] text-sm md:text-base max-w-[600px] mx-auto leading-relaxed">
-            Мониторинг и защита критически важных лесных экосистем на пяти континентах
+            Зеды захватили города по всему миру. Выбери зону и вступи в бой вместе с отрядом
           </p>
         </div>
 
@@ -434,10 +434,10 @@ export default function VerdantPage() {
             <div className="max-w-[720px]">
               <div className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-[#A7ABB3] mb-6 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-                ТЕХНОЛОГИИ СОХРАНЕНИЯ
+                ИГРОВЫЕ МЕХАНИКИ
               </div>
               <h2 className="font-serif text-[36px] leading-[1.15] md:text-[56px] md:leading-[1.1] font-medium mb-8 text-balance">
-                Каждая экосистема{" "}
+                Каждый бой{" "}
                 <span
                   className="inline-block"
                   style={{
@@ -447,11 +447,11 @@ export default function VerdantPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  важна
+                  уникален
                 </span>
               </h2>
               <p className="text-[#A7ABB3] text-base md:text-lg leading-relaxed mb-12">
-                Наши спутниковые и ИИ-технологии отслеживают биоразнообразие, выявляют незаконные вырубки, анализируют паттерны обезлесения и оповещают команды в реальном времени. Сохранение со скоростью, которую требует природа.
+                Killing Floor 3 предлагает динамичный кооп на 6 игроков, десятки классов с уникальными перками, разрушаемое окружение и сотни видов оружия. Каждая волна зедов — новый вызов.
               </p>
 
               <div className="md:hidden mb-8">
@@ -476,27 +476,27 @@ export default function VerdantPage() {
               <div className="space-y-6">
                 {[
                   {
-                    title: "Дроны-разведчики",
-                    desc: "Аэросъемка для учета дикой природы и видового разнообразия",
-                    icon: CustomDroneIcon,
+                    title: "Кооп до 6 игроков",
+                    desc: "Сражайся в команде с друзьями или незнакомцами — координация решает всё",
+                    iconName: "Users",
                     image: "/drone.png",
                   },
                   {
-                    title: "Мониторинг 24/7",
-                    desc: "Круглосуточное спутниковое наблюдение с мгновенными оповещениями",
-                    icon: Satellite,
+                    title: "Система перков",
+                    desc: "10+ уникальных классов: Берсерк, Снайпер, Подрывник, Медик и другие",
+                    iconName: "Zap",
                     image: "/real-time-satellite.png",
                   },
                   {
-                    title: "Учет биоразнообразия",
-                    desc: "Картирование и мониторинг популяций животных по регионам",
-                    icon: PawPrint,
+                    title: "Волновой геймплей",
+                    desc: "Уничтожай волны зедов и готовься к боссу в конце каждого раунда",
+                    iconName: "Swords",
                     image: "/biodiversity-tracking.png",
                   },
                   {
-                    title: "Защита от вырубки",
-                    desc: "Обнаружение угроз до их эскалации",
-                    icon: Trees,
+                    title: "Арсенал оружия",
+                    desc: "Сотни видов оружия: от дробовиков до плазменных пушек",
+                    iconName: "Target",
                     image: "/deforestation-detect.png",
                   },
                 ].map((feature, i) => (
@@ -514,9 +514,11 @@ export default function VerdantPage() {
                       selectedFeature === i ? "border border-white/20" : "border border-white/10"
                     }`}
                   >
-                    <feature.icon
+                    <Icon
+                      name={feature.iconName}
+                      fallback="CircleAlert"
                       className={`w-6 h-6 flex-shrink-0 mt-1 transition-colors ${
-                        selectedFeature === i ? "text-green-400" : "text-green-500/60"
+                        selectedFeature === i ? "text-pink-400" : "text-pink-500/60"
                       }`}
                     />
                     <div className="flex-1">
@@ -537,19 +539,19 @@ export default function VerdantPage() {
               <div className="relative w-full h-full min-h-[500px]">
                 {[
                   {
-                    title: "Дроны-разведчики",
+                    title: "Кооп до 6 игроков",
                     image: "/drone.png",
                   },
                   {
-                    title: "Мониторинг 24/7",
+                    title: "Система перков",
                     image: "/real-time-satellite.png",
                   },
                   {
-                    title: "Учет биоразнообразия",
+                    title: "Волновой геймплей",
                     image: "/biodiversity-tracking.png",
                   },
                   {
-                    title: "Защита от вырубки",
+                    title: "Арсенал оружия",
                     image: "/deforestation-detect.png",
                   },
                 ].map((feature, i) => {
@@ -603,41 +605,41 @@ export default function VerdantPage() {
               ?
             </h2>
             <p className="text-[#A7ABB3] text-sm md:text-base max-w-[600px] mx-auto leading-relaxed">
-              Все, что нужно знать о VERDANT и нашей платформе для экологического мониторинга.
+              Всё, что нужно знать о Killing Floor 3 перед тем, как вступить в бой.
             </p>
           </div>
 
           <div className="space-y-4">
             {[
               {
-                question: "Как работает спутниковый мониторинг VERDANT?",
+                question: "Что такое Killing Floor 3?",
                 answer:
-                  "Наша платформа использует сеть спутников в сочетании с ИИ-алгоритмами для анализа лесного покрова в реальном времени. Мы обнаруживаем изменения площадью от 0,5 гектара в течение 24 часов, что позволяет оперативно реагировать на угрозы: незаконные вырубки или лесные пожары.",
+                  "Killing Floor 3 — кооперативный шутер на выживание от Tripwire Interactive. До 6 игроков сражаются против орд биомеханических мутантов — зедов. Игра предлагает напряжённый волновой геймплей, богатый арсенал и систему прокачки персонажей.",
               },
               {
-                question: "Какие регионы охватывает VERDANT?",
+                question: "На каких платформах доступна игра?",
                 answer:
-                  "VERDANT сейчас ведет мониторинг более 2,4 миллиона гектаров на пяти континентах: тропические леса Амазонии, бассейн Конго, леса Борнео, сибирская тайга и тихоокеанский северо-запад Америки. Мы постоянно расширяем охват для защиты новых экосистем.",
+                  "Killing Floor 3 выходит на PC (Steam), PlayStation 5 и Xbox Series X|S. Все версии поддерживают кросс-плей, чтобы игроки с разных платформ могли сражаться вместе.",
               },
               {
-                question: "Насколько точна система обнаружения угроз?",
+                question: "Сколько игроков поддерживает кооп?",
                 answer:
-                  "Наша система обнаружения угроз на базе ИИ достигает точности 99,4%. Мы используем модели машинного обучения, обученные на миллионах спутниковых снимков, чтобы отличать естественные изменения от антропогенного обезлесения или незаконной деятельности.",
+                  "Основной режим поддерживает до 6 игроков в кооперативе. Также есть одиночный режим для тех, кто хочет испытать себя в одиночку. Система подбора игроков находит союзников автоматически.",
               },
               {
-                question: "Можно ли интегрировать VERDANT с существующими системами?",
+                question: "Какие классы (перки) есть в игре?",
                 answer:
-                  "Да, VERDANT предоставляет полноценный API для интеграции с существующими системами управления природоохранной деятельностью, ГИС-платформами и системами оповещения. Наша документация содержит подробные руководства по внедрению.",
+                  "В Killing Floor 3 более 10 уникальных классов: Берсерк (ближний бой), Коммандо (штурмовые винтовки), Снайпер, Подрывник, Огнемётчик, Медик, Шантажист и другие. Каждый класс имеет уникальное дерево навыков.",
               },
               {
-                question: "Какова модель ценообразования VERDANT?",
+                question: "Есть ли в игре PvP-режим?",
                 answer:
-                  "Мы предлагаем многоуровневое ценообразование в зависимости от площади мониторинга и набора функций. Некоммерческие природоохранные организации могут претендовать на льготные тарифы или гранты. Свяжитесь с нами для расчета индивидуального предложения.",
+                  "Основной фокус Killing Floor 3 — кооперативное PvE-выживание. Режим Versus позволяет одним игрокам управлять зедами против другой команды выживших, создавая уникальный асимметричный PvP-опыт.",
               },
               {
-                question: "Как я могу помочь в сохранении лесов через VERDANT?",
+                question: "Есть ли микротранзакции?",
                 answer:
-                  "Есть несколько способов: пожертвование на мониторинг незащищенных территорий, волонтерство в командах наземной верификации или корпоративное партнерство. Каждый вклад помогает защищать критически важные экосистемы.",
+                  "В игре есть косметические предметы (скины, наряды) приобретаемые за внутриигровую валюту или реальные деньги. Всё игровое оружие и перки прокачиваются исключительно через геймплей — pay-to-win отсутствует.",
               },
             ].map((faq, i) => (
               <div
@@ -682,18 +684,18 @@ export default function VerdantPage() {
         <div className="max-w-[800px] w-full mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 glass-pill px-4 py-2 rounded-full mb-8 text-xs md:text-sm text-[#A7ABB3]">
             <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-            Спасем планету
+            Готов к бою?
           </div>
 
           <h2 className="font-serif text-[40px] leading-[1.15] md:text-[64px] md:leading-[1.1] font-medium mb-6 text-balance">
-            Присоединяйтесь к глобальному движению
+            Вступи в отряд выживших
           </h2>
           <p className="text-[#A7ABB3] text-base md:text-lg mb-10 leading-relaxed max-w-[560px] mx-auto">
-            Вместе мы строим устойчивое будущее. Начните защищать леса уже сегодня.
+            Миллионы игроков уже сражаются с ордами зедов. Твоя команда ждёт тебя прямо сейчас.
           </p>
 
           <Button className="glass-button text-base rounded-full bg-white/5 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 text-white px-8 py-6 md:text-base">
-            Начать сейчас
+            Играть сейчас
           </Button>
         </div>
       </section>
@@ -703,9 +705,9 @@ export default function VerdantPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
             {/* Brand Column */}
             <div className="flex flex-col gap-4">
-              <div className="text-lg font-semibold font-mono">VERDANT</div>
+              <div className="text-lg font-semibold font-mono">KILLING FLOOR 3</div>
               <p className="text-xs text-[#A7ABB3] leading-relaxed">
-                Защита лесов по всему миру с помощью мониторинга в реальном времени и ИИ-технологий.
+                Кооперативный шутер на выживание. Сражайся с ордами зедов вместе с командой.
               </p>
               <div className="flex items-center gap-4 mt-2">
                 <a
@@ -736,35 +738,35 @@ export default function VerdantPage() {
 
             {/* Product Menu */}
             <div className="flex flex-col gap-4">
-              <div className="text-xs uppercase tracking-[0.15em] text-[#F2F3F5] font-semibold mb-2">Продукт</div>
+              <div className="text-xs uppercase tracking-[0.15em] text-[#F2F3F5] font-semibold mb-2">Игра</div>
               <div className="flex flex-col gap-3">
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
-                  Возможности
+                  Механики
                 </a>
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
-                  Тарифы
+                  Классы
                 </a>
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
-                  Документация
+                  Карты
                 </a>
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
-                  API
+                  Патч-ноуты
                 </a>
               </div>
             </div>
 
             {/* Company Menu */}
             <div className="flex flex-col gap-4">
-              <div className="text-xs uppercase tracking-[0.15em] text-[#F2F3F5] font-semibold mb-2">Компания</div>
+              <div className="text-xs uppercase tracking-[0.15em] text-[#F2F3F5] font-semibold mb-2">Сообщество</div>
               <div className="flex flex-col gap-3">
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
-                  О нас
+                  Discord
                 </a>
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
-                  Блог
+                  Reddit
                 </a>
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
-                  Карьера
+                  Турниры
                 </a>
                 <a href="#" className="text-sm text-[#A7ABB3] hover:text-[#F2F3F5] transition-colors">
                   Контакты
@@ -775,7 +777,7 @@ export default function VerdantPage() {
             {/* Newsletter Subscription */}
             <div className="flex flex-col gap-4">
               <div className="text-xs uppercase tracking-[0.15em] text-[#F2F3F5] font-semibold mb-2">Рассылка</div>
-              <p className="text-xs text-[#A7ABB3] mb-3">Получайте новости об экологических инициативах.</p>
+              <p className="text-xs text-[#A7ABB3] mb-3">Получайте новости об обновлениях и ивентах игры.</p>
               <div className="flex flex-col gap-2">
                 <input
                   type="email"
@@ -791,7 +793,7 @@ export default function VerdantPage() {
 
           {/* Footer Bottom */}
           <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#A7ABB3]">
-            <div>2025 VERDANT. Все права защищены.</div>
+            <div>2025 Killing Floor 3. Tripwire Interactive. Все права защищены.</div>
             <div className="flex gap-6">
               <a href="#" className="hover:text-[#F2F3F5] transition-colors">
                 Политика конфиденциальности
